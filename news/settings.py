@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-fy-+qe$((hk6io5dvxprn(tv2i8jypp+g0+*06%v+3genh#l)f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['engage4change.info', 'www.engage4change.info', '54.177.126.29']
+ALLOWED_HOSTS = ['engage4change.info', 'www.engage4change.info', '54.177.126.29', '127.0.0.1',]
 
 
 # Application definition
