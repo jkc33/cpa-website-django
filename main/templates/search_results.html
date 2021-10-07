@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container mt-5 mb-5">
+    {% if searched %}
+        <h3 class="border-bottom pb-1 my-4">Search Results for {{ searched }}</h3>
+        {% for news in all_news %}
+        <div class="card mb-4 shadow">
+            <div class="row no-gutters align-items-center">
+                <div class="col-md-3">
+                    <img src="/media/{{news.image}}" class="card-img-top" alt="{{news.title}}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{news.title}}</h5>
+                        <p class="card-text">{{news.detail|truncatewords:30}}</p>
+                        <p class="card-text"><a href="/detail/{{news.id}}" class="btn btn-sm btn-primary">Read Full</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <h3 class="border-bottom pb-1 my-4">Please enter some keywords...</h3>
+    {% endif %}
+    <!-- News Box -->
+</main>
+{% endblock %}
