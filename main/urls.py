@@ -12,7 +12,7 @@ urlpatterns = [
     path('all-category', views.all_category, name='all-categories'),
     path('category/<int:id>', views.category, name='category'),
     path('search-results', views.search_results, name='search-results'),
-    path('home', views.home, name='home'),
+    path('latest', views.home, name='latest'),
     path(
         "favicon.ico",
         RedirectView.as_view(url=staticfiles_storage.url("favicon.ico")),
