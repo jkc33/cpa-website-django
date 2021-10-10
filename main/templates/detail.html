@@ -4,7 +4,7 @@
     <!-- featured news -->
     <div class="row my-3">
         <!-- Left -->
-        <div class="col-md-8">
+        <div class="col-md-9">
             <div class="card mb-3">
                 <img src="/media/{{news.image}}" class="card-img-top" alt="{{news.title}}">
                 <div class="card-body">
@@ -61,7 +61,7 @@
             </div>
         </div>
         <!-- Related News -->
-        <div class="col-md-4" style="max-height: 1500px; overflow: auto;">
+        <div class="col-md-3" style="max-height: 2000px; overflow: auto;">
             <h3 class="mb-3 border-bottom pb-1">More in {{news.category.title}}</h3>
             <!-- Category Box -->
             {% for news in related_news %}
