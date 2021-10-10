@@ -1,7 +1,92 @@
 {% extends 'base.html' %}
 {% block content %}
-<main class="container mt-5 mb-5">
+<div class="jumbotron-fluid jumbo-anim pt-5 mb-5" style="background-color: #E04958; z-index: -1; position: relative;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <h1 class="text-light font-weight-bolder display-4 mb-5">Engage4Change</h1>
+                <h3 class="text-light font-weight-bolder">News For Today's Youth</h3>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 justify-content-end"
+                style="z-index: -1; position: relative;">
+                <svg class="hero-design w-100 h-100 d-flex" width="570" height="729" viewBox="0 0 897 729" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect class="square-anim" x="466" y="60" width="161" height="161" rx="19" fill="#fd6e70"
+                        fill-opacity="1" />
+                    <rect class="square-anim" x="466" y="377" width="161" height="161" rx="19" fill="#fd6e70"
+                        fill-opacity="1" />
+                    <rect class="square-anim" x="623" y="216" width="161" height="161" rx="19" fill="#fd6e70"
+                        fill-opacity="1" />
+                    <rect class="square-anim" x="308" y="219" width="161" height="161" rx="19" fill="white" />
+                    <rect class="square-anim" x="308" y="536" width="161" height="161" rx="19" fill="white" />
+                    <rect class="square-anim" x="147" y="377" width="161" height="161" rx="19" fill="#fd6e70"
+                        fill-opacity="1" />
+                    <circle class="square-anim" cx="545" cy="299" r="78" fill="#f9d75e" fill-opacity="1" />
+                    <circle class="square-anim" cx="389" cy="458" r="78" fill="#5cdde8" fill-opacity="1" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+<main class="container mt-4 mb-5">
     <!-- featured news -->
+
+    <h3 class="border-bottom pb-1 my-4 font-weight-bold">What We Do</h3>
+    <div class="card mb-3 p-4">
+        <div class="row align-items-center mr-auto">
+            <div class="col-lg-4 col-md-12 mb-3">
+                <img src="/static/vendor/newspaper.jpeg" class="card-img-bottom rounded-lg" alt="RFY">
+            </div>
+            <div class="col-lg-8 col-md-12 mb-3">
+                Engage for Change is a news organization that creates content specifically for young people.
+                <br><br>
+                Our mission is to educate young people about the world around them in order to encourage engaged
+                citizenship and promote
+                youth empowerment.
+            </div>
+        </div>
+    </div>
+    <h3 class="border-bottom pb-1 my-4 font-weight-bold">About Us</h3>
+    <div class="card mb-3 p-4">
+        <div class="row align-items-center mr-auto">
+            <div class="col-lg-4 col-md-12 mb-3">
+                <img src="/static/vendor/rfy.png" class="card-img-bottom" alt="RFY">
+            </div>
+            <div class="col-lg-8 col-md-12 mb-3">
+                Rhapsody4Youth is a high school student-run 501(c)(3) nonprofit organization. Our mission is to interact
+                with young
+                individuals by motivating them to articulate their ideas and self-advocate for positive changes in their
+                lives
+                by
+                providing services, such as classes, seminars, workshops, podcasts, a YouTube channel, and volunteering
+                opportunities.
+                We believe it is important to engage the youth in thoughtful conversations and discussions.
+                Rhapsody4Youth
+                is to
+                make us heard. <br><br>Learn more about Rhapsody4Youth <a href="https://www.rhapsody4youth.org/"
+                    target="_blank">here</a>.
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3 rounded pl-4 pr-4">
+        <div class="row align-items-center mr-auto flex-column-reverse flex-lg-row">
+            <div class="col-lg-8 col-md-12 mb-3">
+                AV Web is a high school club based in Amador Valley High School, where they teach students Web
+                Development through
+                projects. The Amador Valley Web Development Club is dedicated to providing an easy entry environment for
+                high schoolers
+                interested in web development. We help strengthen the web development skills of our members by providing
+                useful
+                resources and building real-world web applications with the purpose of benefiting our school and the
+                local community.
+                <br><br>Learn more about AV Web <a href="https://www.rhapsody4youth.org/" target="_blank">here</a>.
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <img src="/static/vendor/avweb.png" class="card-img-bottom" alt="RFY">
+            </div>
+        </div>
+    </div>
+    <h3 class="border-bottom pb-1 my-4 font-weight-bold">Latest News</h3>
     <div class="row my-3">
         <!-- Left -->
         <div class="col-md-7">
@@ -16,10 +101,10 @@
             </div>
         </div>
         <!-- Right -->
-        <div class="col-md-5" style="max-height: 600px; overflow: auto;">
+        <div class="col-md-5" style="max-height: 800px; overflow: auto;">
             {% for news in three_news %}
             <!-- News Box -->
-            <div class="card">
+            <div class="card rounded">
                 <div class="row no-gutters align-items-center">
                     <div class="col-md-4">
                         <img src="media/{{news.image}}" class="card-img-bottom" alt="{{news.title}}">
@@ -37,26 +122,54 @@
             {% endfor %}
         </div>
     </div>
-    
+
     {% for category in three_categories %}
-    <h3 class="border-bottom pb-1 font-weight-bold">{{category.title}} <a href="/category/{{category.id}}" class="float-right btn btn-sm btn-dark">Browse</a></h3>
+    <h3 class="border-bottom pb-1 font-weight-bold">{{category.title}} <a href="/category/{{category.id}}"
+            class="float-right btn btn-sm btn-dark">Browse</a></h3>
     <div class="row my-4">
         {% for news in category.news_set.all reversed %}
-        {% if forloop.counter < 5 %}
-        <div class="col-md-3">
+        {% if forloop.counter < 5 %} <div class="col-md-3">
             <div class="card mb-3 shadow">
                 <img src="media/{{news.image}}" class="card-img-bottom" alt="{{news.title}}">
                 <div class="card-body">
                     <h5 class="card-title text-truncate font-weight-bold">{{news.title}}</h5>
-                    <hr/>
+                    <hr />
                     <p class="card-text"><a href="/detail/{{news.id}}" class="btn btn-sm btn-primary">Read Full</a></p>
                 </div>
             </div>
-        </div>
-        {% endif %}
-        {% endfor %}
+    </div>
+    {% endif %}
+    {% endfor %}
     </div>
     {% endfor %}
 
 </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
+    integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"
+    integrity="sha512-DlTk2PLUinhBupE89kHOJTt11QqbRMQVlbb26XVDvp4D1kt0fRvQJslvZnTelRJHq6yK0tIPCR7cul8+9Blz0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+    var tl = gsap.timeline();
+
+    gsap.from(".square-anim", {
+        stagger: 0.2,
+        scale: 0.1,
+        duration: 1,
+        ease: Back.easeOut.config(1.7)
+    });
+
+    tl.from('.jumbo-anim', {
+        y: '-30%',
+        opacity: 0,
+        duration: 2,
+        ease: Power4.easeOut
+    });
+
+</script>
+
 {% endblock %}

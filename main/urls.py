@@ -6,13 +6,13 @@ from django.views.generic.base import RedirectView
 from django.contrib.staticfiles.storage import staticfiles_storage
 
 urlpatterns = [
-    path('', views.about, name='about'),
+    path('', views.home, name='home'),
     path('all-news', views.all_news, name='all-news'),
     path('detail/<int:id>', views.detail, name='detail'),
     path('all-category', views.all_category, name='all-categories'),
     path('category/<int:id>', views.category, name='category'),
     path('search-results', views.search_results, name='search-results'),
-    path('latest', views.home, name='latest'),
+    path('about', views.about, name='about'),
     path(
         "favicon.ico",
         RedirectView.as_view(url=staticfiles_storage.url("favicon.ico")),

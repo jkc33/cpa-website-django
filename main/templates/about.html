@@ -1,29 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <main class="container mt-5 mb-5">
-    <h3 class="border-bottom pb-1 my-4">About Us</h3>
-    <div class="row align-items-center mr-auto">
-        <div class="col-md-4 mb-3">
-            <img src="/static/vendor/rfy.png" class="card-img-bottom" alt="RFY">
-        </div>
-        <div class="col-md-8 mb-3">
-            Rhapsody for Youth is a high school student-run 501(c)(3) nonprofit organization. Our mission is to interact
-            with young
-            individuals by motivating them to articulate their ideas and self-advocate for positive changes in their lives
-            by
-            providing services, such as classes, seminars, workshops, podcasts, a YouTube channel, and volunteering
-            opportunities.
-            We believe it is important to engage the youth in thoughtful conversations and discussions. Rhapsody for Youth
-            is to
-            make us heard. Learn more about Rhapsody for Youth <a href="https://www.rhapsody4youth.org/"
-                target="_blank">here</a>.
-        </div>
-    </div>
-    <h3 class="border-bottom pb-1 my-4">Meet the Team</h3>
+    <h3 class="border-bottom pb-1 my-4">Writing Team</h3>
     <div class="row row-cols-3">
         <!-- Category Box -->
         {% for person in people %}
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card mb-3 mt-3 shadow align-self-stretch">
                 <div class="card-body">
                     <div class="row align-items-center mr-auto">
@@ -32,7 +14,52 @@
                             <footer class="blockquote-footer">{{person.position}}</footer>
                         </div>
                         <div class="col-4">
-                            <img src="/media/{{person.image}}" class="card-img-top rounded-circle" alt="{{person.name}}">
+                            <img src="/media/{{person.image}}" class="card-img-top rounded-circle"
+                                alt="{{person.name}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <h3 class="border-bottom pb-1 my-4">Editing Team</h3>
+    <div class="row row-cols-3">
+        <!-- Category Box -->
+        {% for person in people %}
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card mb-3 mt-3 shadow align-self-stretch">
+                <div class="card-body">
+                    <div class="row align-items-center mr-auto">
+                        <div class="col-8">
+                            <h5 class="card-title">{{person.name}}</h5>
+                            <footer class="blockquote-footer">{{person.position}}</footer>
+                        </div>
+                        <div class="col-4">
+                            <img src="/media/{{person.image}}" class="card-img-top rounded-circle"
+                                alt="{{person.name}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <h3 class="border-bottom pb-1 my-4">Web Development Team</h3>
+    <div class="row row-cols-3">
+        <!-- Category Box -->
+        {% for person in people %}
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card mb-3 mt-3 shadow align-self-stretch">
+                <div class="card-body">
+                    <div class="row align-items-center mr-auto">
+                        <div class="col-8">
+                            <h5 class="card-title">{{person.name}}</h5>
+                            <footer class="blockquote-footer">{{person.position}}</footer>
+                        </div>
+                        <div class="col-4">
+                            <img src="/media/{{person.image}}" class="card-img-top rounded-circle"
+                                alt="{{person.name}}">
                         </div>
                     </div>
                 </div>

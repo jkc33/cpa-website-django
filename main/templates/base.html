@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'vendor/favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'vendor/favicon/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'vendor/favicon/site.webmanifest' %}">
-    <title>{% block title %}Engage for Change{% endblock %}</title>
+    <title>{% block title %}Engage4Change{% endblock %}</title>
     <!-- Bootstrap 4 CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/bs4/bootstrap.min.css' %}" />
     <!-- Main Jquery -->
@@ -20,10 +20,11 @@
     <!-- Top News -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
         <div class="container">
-            <a class="navbar-brand font-weight-bold" id="brand" href="/">Engage for Change</a>
+            <a class="navbar-brand font-weight-bold" id="brand" href="/">Engage4Change</a>
             <form class="form-inline mr-auto" method=POST action="{% url 'search-results' %}">
                 {% csrf_token %}
-                <input class="form-control form-control-sm" type="text" placeholder="Search Articles" aria-label="Search" name="searched">
+                <input class="form-control form-control-sm" type="text" placeholder="Search Articles"
+                    aria-label="Search" name="searched">
             </form>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/latest">Latest News</a>
+                        <a class="nav-link" href="/about">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/all-news">All Articles</a>
@@ -54,7 +55,7 @@
             <p class="float-right">
                 <a href="#">Back to top</a>
             </p>
-            <p>Engage for Change is a product of RFY. All rights reserved . Copyright 2021.</p>
+            <p>Engage4Change is a product of RFY. All rights reserved . Copyright 2021.</p>
         </div>
     </footer>
 </body>
