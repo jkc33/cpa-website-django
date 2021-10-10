@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <p class="card-text small">{{news.add_time}}</p>
                     <h4 class="card-title font-weight-bold">{{news.title}}</h4>
-                    <p class="card-text small">By {{news.author}}</p>
+                    <p class="card-text small">By <a href="/bios/{{news.writer.id}}" class="primary">{{news.writer}}</a></p>
                     <hr />
                     <p class="card-text">{{news.detail | linebreaks}}</p>
                 </div>

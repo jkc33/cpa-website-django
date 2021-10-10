@@ -5,6 +5,7 @@
     <div class="row row-cols-3">
         <!-- Category Box -->
         {% for person in people %}
+        {% if person.writer %}
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card mb-3 mt-3 shadow align-self-stretch">
                 <div class="card-body">
@@ -12,6 +13,7 @@
                         <div class="col-8">
                             <h5 class="card-title">{{person.name}}</h5>
                             <footer class="blockquote-footer">{{person.position}}</footer>
+                            <a href="/bios/{{person.id}}" class="btn btn-sm btn-primary mt-3">Read Full</a>
                         </div>
                         <div class="col-4">
                             <img src="/media/{{person.image}}" class="card-img-top rounded-circle"
@@ -21,12 +23,14 @@
                 </div>
             </div>
         </div>
+        {% endif %}
         {% endfor %}
     </div>
     <h3 class="border-bottom pb-1 my-4">Editing Team</h3>
     <div class="row row-cols-3">
         <!-- Category Box -->
         {% for person in people %}
+        {% if person.editor %}
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card mb-3 mt-3 shadow align-self-stretch">
                 <div class="card-body">
@@ -34,6 +38,7 @@
                         <div class="col-8">
                             <h5 class="card-title">{{person.name}}</h5>
                             <footer class="blockquote-footer">{{person.position}}</footer>
+                            <a href="/bios/{{person.id}}" class="btn btn-sm btn-primary mt-3">Read Full</a>
                         </div>
                         <div class="col-4">
                             <img src="/media/{{person.image}}" class="card-img-top rounded-circle"
@@ -43,12 +48,14 @@
                 </div>
             </div>
         </div>
+        {% endif %}
         {% endfor %}
     </div>
     <h3 class="border-bottom pb-1 my-4">Web Development Team</h3>
     <div class="row row-cols-3">
         <!-- Category Box -->
         {% for person in people %}
+        {% if person.web_developer %}
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card mb-3 mt-3 shadow align-self-stretch">
                 <div class="card-body">
@@ -56,6 +63,7 @@
                         <div class="col-8">
                             <h5 class="card-title">{{person.name}}</h5>
                             <footer class="blockquote-footer">{{person.position}}</footer>
+                            <a href="/bios/{{person.id}}" class="btn btn-sm btn-primary mt-3">Read Full</a>
                         </div>
                         <div class="col-4">
                             <img src="/media/{{person.image}}" class="card-img-top rounded-circle"
@@ -65,6 +73,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
         {% endfor %}
     </div>
 </main>

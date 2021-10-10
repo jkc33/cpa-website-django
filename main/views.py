@@ -83,3 +83,12 @@ def about(request):
     return render(request, 'about.html', {
         'people': people,
     })
+
+
+def bio(request, id):
+    person = Person.objects.get(id=id)
+    news = News.objects.filter(writer=person)
+    return render(request, 'bio.html', {
+        'person': person,
+        'news': news,
+    })

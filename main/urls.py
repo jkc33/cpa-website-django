@@ -13,6 +13,7 @@ urlpatterns = [
     path('category/<int:id>', views.category, name='category'),
     path('search-results', views.search_results, name='search-results'),
     path('about', views.about, name='about'),
+    path('bios/<int:id>', views.bio, name='bio'),
     path(
         "favicon.ico",
         RedirectView.as_view(url=staticfiles_storage.url("favicon.ico")),

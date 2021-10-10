@@ -14,10 +14,27 @@ class Category(models.Model):
         return self.title
 
 
+class Person(models.Model):
+    name = models.CharField(max_length=100)
+    position = models.CharField(max_length=100)
+    bio = models.TextField()
+    writer = models.BooleanField(default=False)
+    editor = models.BooleanField(default=False)
+    web_developer = models.BooleanField(default=False)
+    image = models.ImageField(upload_to='imgs/')
+
+    class Meta:
+        verbose_name_plural = 'People'
+
+    def __str__(self):
+        return self.name
+
+
 class News(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=300)
     author = models.CharField(max_length=300, default="")
+    writer = models.ForeignKey(Person, on_delete=models.CASCADE, default=1)
     image = models.ImageField(upload_to='imgs/')
     detail = models.TextField()
     add_time = models.DateField()
@@ -38,16 +55,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.comment
-
-
-class Person(models.Model):
-    name = models.CharField(max_length=100)
-    position = models.CharField(max_length=100)
-    bio = models.TextField()
-    image = models.ImageField(upload_to='imgs/')
-
-    class Meta:
-        verbose_name_plural = 'People'
-
-    def __str__(self):
-        return self.name

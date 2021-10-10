@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container mt-4 mb-5">
+    <!-- featured news -->
+    <div class="row my-3 align-items-center justify-content-center mt-5 border-bottom pb-4">
+        <!-- Left -->
+        <div class="text-center col-md-3 col-sm-12 mb-md-0 mb-sm-3">
+            <img src="/media/{{person.image}}" class="card-img-top rounded-circle w-50" alt="{{person.name}}">
+        </div>
+        <div class="col-md-9 col-sm-12">
+            <h2 class=" text-md-left text-sm-center card-title font-weight-bold">{{person.name}}</h2>
+            <h4><footer class="text-md-left text-sm-center blockquote-footer font-italic">{{person.position}}</footer></h4>
+        </div>
+    </div>
+    <p>{{person.bio}}</p>
+    {% if person.writer %}
+    <h3 class="border-bottom pb-1 my-4">Latest by {{person.name}}</h3>
+    {% for news in news reversed %}
+    <div class="card mb-4 shadow">
+        <div class="row no-gutters align-items-center">
+            <div class="col-md-3">
+                <img src="/media/{{news.image}}" class="card-img-top" alt="{{news.title}}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">{{news.title}}</h5>
+                    <p class="card-text">{{news.detail|truncatewords:30}}</p>
+                    <p class="card-text"><a href="/detail/{{news.id}}" class="btn btn-sm btn-primary">Read Full</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</main>
+{% endblock %}
